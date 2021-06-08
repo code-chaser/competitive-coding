@@ -21,9 +21,11 @@ using namespace std;
 #define print1(x) for(auto i:x) cout<<i.first<<" "<<i.second<<"\n"; br;
 #define input0(x) for(auto &i:x) cin>>i;
 #define input1(x) for(auto &i:x) cin>>i.first>>i.second;
+#define input2(x,n) rep0(i,0,n) llint inp,cin>>inp,x.insert(inp);
 #define pb push_back
 #define eb emplace_back
 #define mp make_pair
+#define all(x) x.begin(),x.end()
 #define ifn(x) if(!(x))
 #define setbits(x) __builtin_popcountll(x)
 #define tzerobits(x) __builtin_ctzll(x)

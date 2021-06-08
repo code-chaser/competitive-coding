@@ -10,10 +10,10 @@ using namespace std;
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("avx,avx2,fma")
 
-#define rep0(i,k,n) for(llint i=k;i<n;i++)
-#define rep1(i,k,n) for(llint i=k;i>n;i--)
 #define rep2(i,k,n,a) for(llint i=k;(i<n)&&(a);i++)
 #define rep3(i,k,n,a) for(llint i=k;(i>n)&&(a);i--)
+#define rep0(i,k,n) rep2(i,k,n,1)
+#define rep1(i,k,n) rep3(i,k,n,1)
 #define br cout<<"\n";
 #define yea cout<<"YES\n";
 #define nah cout<<"NO\n";
@@ -21,18 +21,21 @@ using namespace std;
 #define print1(x) for(auto i:x) cout<<i.first<<" "<<i.second<<"\n"; br;
 #define input0(x) for(auto &i:x) cin>>i;
 #define input1(x) for(auto &i:x) cin>>i.first>>i.second;
+#define input2(x,n) rep0(i,0,n) llint inp,cin>>inp,x.insert(inp);
 #define pb push_back
 #define eb emplace_back
 #define mp make_pair
+#define all(x) x.begin(),x.end()
 #define ifn(x) if(!(x))
 #define setbits(x) __builtin_popcountll(x)
 #define tzerobits(x) __builtin_ctzll(x)
 #define lzerobits(x) __builtin_clzll(x)
 #define gcd __gcd
+#define lcm(x,y) (x*y/gcd(x,y))
 #define fileinput freopen("input.txt","r",stdin);
 #define fileoutput freopen("output.txt","w",stdout);
-#define timestarts tttt=clock();
-#define timeends cout<<"\ntime taken: "<<(((double)clock())-tttt)/((double)CLOCKS_PER_SEC) <<"\n\n";
+#define clock1 tttt=clock();
+#define clock0 cout<<"\ntime taken: "<<(((double)clock())-tttt)/((double)CLOCKS_PER_SEC) <<"\n\n";
 //#define a(i,j,n) a[i][j]
 //#define a(i,j,n) a[i*n+j]
 typedef long long llint;
@@ -83,9 +86,9 @@ const llint Min=-9223372036854775808;  //-(1<<63)
     |     18     ||Matrix Multiplication            ||              |
     |     19     ||Greatest power of 2 <= given num ||              |
     |     20     ||Rightmost set bit in given number||ctzll         |
-    |     21     ||                                 ||              |
+    |     21     ||Binary string to decimal int     ||              |
     |     22     ||RADIX SORT                       ||only for +ve  |
-    |     23     ||                                 ||              |
+    |     23     ||Number to string                 ||              |
     |     24     ||                                 ||              |
     |     25     ||                                 ||              |
     |     26     ||                                 ||              |
@@ -432,6 +435,15 @@ llint rightmostSetBit(llint n){
 //CHECKED
 //======================================================
 
+//returns the decimal equivalent of a binary string;
+llint binStrToNum(string s){
+    llint res=0;
+    rep0(i,0,s.size()) if(s[i]-'0') res+=((1<<(s.size()-1-i)));
+    return res;
+}
+//CHECKED
+//======================================================
+
 //RADIX SORT
 //(i)  binary exponentiation;
 llint power(llint n, llint exp){
@@ -477,7 +489,7 @@ llint power(llint n, llint exp){
 string numToStr(llint n){
     llint digits=log10(n)+1;
     string s;
-    rep0(i,0,digits) s.pb((char)floor((n%(power(10,digits-i)))/power(10,digits-i-1))+48);
+    rep0(i,0,digits) s.pb((char)floor((n%(power(10,digits-i)))/power(10,digits-i-1))+'0');
     return s;
 }
 //CHECKED
