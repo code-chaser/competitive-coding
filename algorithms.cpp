@@ -15,8 +15,8 @@ using namespace std;
 #define rep0(i,k,n) rep2(i,k,n,1)
 #define rep1(i,k,n) rep3(i,k,n,1)
 #define br cout<<"\n";
-#define yea cout<<"YES\n";
-#define nah cout<<"NO\n";
+#define yea cout<<"YES\n"
+#define nah cout<<"NO\n"
 #define print0(x) for(auto i:x) cout<<i<<" "; br;
 #define print1(x) for(auto i:x) cout<<i.first<<" "<<i.second<<"\n"; br;
 #define input0(x) for(auto &i:x) cin>>i;
@@ -277,7 +277,7 @@ void prmFactors(vector<llint>& primeFactors, llint n){
     if(!(n&1)) primeFactors.pb(2);
     for(llint i=3;i*i<=n;i+=2){
         if(v[i-1]!=-1) continue;
-        for(llint j=i*i;j<=n;j+=(i>>1)) v[j-1]=i;
+        for(llint j=i*i;j<=n;j+=(i<<1)) v[j-1]=i;
     }
     while(n!=1){
         if(v[n-1]==-1) primeFactors.pb(n),n=1;

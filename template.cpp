@@ -15,8 +15,8 @@ using namespace std;
 #define rep0(i,k,n) rep2(i,k,n,1)
 #define rep1(i,k,n) rep3(i,k,n,1)
 #define br cout<<"\n";
-#define yea cout<<"YES\n";
-#define nah cout<<"NO\n";
+#define yea cout<<"YES\n"
+#define nah cout<<"NO\n"
 #define print0(x) for(auto i:x) cout<<i<<" "; br;
 #define print1(x) for(auto i:x) cout<<i.first<<" "<<i.second<<"\n"; br;
 #define input0(x) for(auto &i:x) cin>>i;
