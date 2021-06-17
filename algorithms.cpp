@@ -256,16 +256,17 @@ bool isPrime(llint n){
 // of (n) beyond sqrt(n) for obvious reasons, and that one prime factor also:
 // (if it exists) can have exponent 1 at max and if there's just one prime factor of:
 // (n) beyond sqrt(n), it shall be considered in the next line of code;
-void prmFactors(map<llint,llint>& primeFactors, llint n){
-    if(!(n&1)) primeFactors.insert(mp(2,__builtin_ctzll(n))),n>>=__builtin_ctzll(n);
+map<llint,llint> prmFactors(llint n){
+    map<llint,llint> primeFactors;
+    if(!(n&1)) primeFactors[2]=__builtin_ctzll(n),n>>=__builtin_ctzll(n);
     for(llint i=3;(i*i)<=n;i+=2){
         if(n%i) continue;
         llint exp=0;
         while(!(n%i)) exp++,n/=i;
-        primeFactors.insert(mp(i,exp));
+        primeFactors[i]=exp;
     }
-    if(n>1) primeFactors.insert(mp(n,1));
-    return;
+    if(n>1) primeFactors[n]=1;
+    return primeFactors;
 }
 //CHECKED
 //======================================================
