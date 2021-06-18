@@ -73,15 +73,15 @@ const llint Min=-9223372036854775808;  //-(1<<63)
     |      7     ||Primality Test O(sqrt(n))        ||              |
     |      8     ||Prime Factorization              ||              |
     |      9     ||PRIME FACTORIZATION: (i) & (ii)  ||              |
-    |     10     ||Smallest Prime Factor            ||              |
-    |     11     ||Binary Exponentiation Recursive  ||              |
-    |     12     ||Binary Exponentiation Iterative  ||              |
-    |     13     ||Modular Binary Exponentiation    ||              |
-    |            ||Recursive                        ||              |
+    |     10     ||Divisors of a number             ||              |
+    |     11     ||Smallest Prime Factor            ||              |
+    |     12     ||Binary Exponentiation Recursive  ||              |
+    |     13     ||Binary Exponentiation Iterative  ||              |
     |     14     ||Modular Binary Exponentiation    ||              |
+    |            ||Recursive                        ||              |
+    |     15     ||Modular Binary Exponentiation    ||              |
     |            ||Iterative                        ||              |
-    |     15     ||Euclidean GCD                    ||              |
-    |     16     ||                                 ||              |
+    |     16     ||Euclidean GCD                    ||              |
     |     17     ||MATRIX EXPONENTIATION: (i) & (ii)||              |
     |     18     ||Matrix Multiplication            ||              |
     |     19     ||Greatest power of 2 <= given num ||              |
@@ -257,7 +257,7 @@ bool isPrime(llint n){
 // of (n) beyond sqrt(n) for obvious reasons, and that one prime factor also:
 // (if it exists) can have exponent 1 at max and if there's just one prime factor of:
 // (n) beyond sqrt(n), it will be considered in the second last line of code;
-map<llint,llint> prFactors(llint n){
+map<llint,llint> prmFactors(llint n){
     map<llint,llint> primeFactors;
     if(!(n&1)) primeFactors[2]=__builtin_ctzll(n),n>>=__builtin_ctzll(n);
     for(llint i=3;(i*i)<=n;i+=2){
@@ -286,7 +286,7 @@ vector<llint> spf(llint n){
 }
 
 //(ii) Prime Factorization
-vector<llint> prFactors(llint n){
+vector<llint> prmFactors(llint n){
     vector<llint> primeFactors;
     vector<llint> v=spf(n);
     while(n!=1) primeFactors.pb(v[n]),n/=v[n];
@@ -294,6 +294,18 @@ vector<llint> prFactors(llint n){
 }
 //CHECKED
 //======================================================
+
+//Divisors of a number
+vector<llint> divisors(llint n){
+    vector<llint> v;
+    for(llint i=1;i*i<n;i++) if(!(n%i)) v.pb(i),v.pb(n/i);
+    if(ceil(sqrt(n))==sqrt(n)) v.pb(sqrt(n));
+    sort(v.begin(),v.end());
+    return v;
+}
+//CHECKED
+//======================================================
+
 
 //Smallest Prime Factor using sieve
 //returns a vector with each index filled with it's smallest prime factor upto n;
