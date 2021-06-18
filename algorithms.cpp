@@ -71,8 +71,8 @@ const llint Min=-9223372036854775808;  //-(1<<63)
     |      6(i)  ||Bitwise Sieve                    ||              |
     |      6(ii) ||Bitwise Sieve                    ||              |
     |      7     ||Primality Test O(sqrt(n))        ||              |
-    |      8     ||PRIME FACTORIZATION: (i) & (ii)  ||              |
-    |      9     ||Prime Factorization              ||              |
+    |      8     ||Prime Factorization              ||              |
+    |      9     ||PRIME FACTORIZATION: (i) & (ii)  ||              |
     |     10     ||Smallest Prime Factor            ||              |
     |     11     ||Binary Exponentiation Recursive  ||              |
     |     12     ||Binary Exponentiation Iterative  ||              |
@@ -81,7 +81,7 @@ const llint Min=-9223372036854775808;  //-(1<<63)
     |     14     ||Modular Binary Exponentiation    ||              |
     |            ||Iterative                        ||              |
     |     15     ||Euclidean GCD                    ||              |
-    |     16     ||Square Root using Binary Search  ||              |
+    |     16     ||                                 ||              |
     |     17     ||MATRIX EXPONENTIATION: (i) & (ii)||              |
     |     18     ||Matrix Multiplication            ||              |
     |     19     ||Greatest power of 2 <= given num ||              |
@@ -250,13 +250,14 @@ bool isPrime(llint n){
 //CHECKED
 //======================================================
 
-//PRIME FACTORIZATION
-//stores all the prime factors of a number in the passed map as key and their exponents as the corresponding value;
+//Prime Factorization
+//returns all the prime factors of a number in a map as key and their exponents as the corresponding value;
+
 // Explanation for not checking beyond sqrt(n): there can't be more than one prime factor:
 // of (n) beyond sqrt(n) for obvious reasons, and that one prime factor also:
 // (if it exists) can have exponent 1 at max and if there's just one prime factor of:
-// (n) beyond sqrt(n), it shall be considered in the next line of code;
-map<llint,llint> prmFactors(llint n){
+// (n) beyond sqrt(n), it will be considered in the second last line of code;
+map<llint,llint> prFactors(llint n){
     map<llint,llint> primeFactors;
     if(!(n&1)) primeFactors[2]=__builtin_ctzll(n),n>>=__builtin_ctzll(n);
     for(llint i=3;(i*i)<=n;i+=2){
@@ -271,19 +272,25 @@ map<llint,llint> prmFactors(llint n){
 //CHECKED
 //======================================================
 
-//Prime Factorization
-//fills the passed vector with prime factors of the given number;
-void prmFactors(vector<llint>& primeFactors, llint n){
-    vector<llint> v(n,-1);
-    if(!(n&1)) primeFactors.pb(2);
-    for(llint i=3;i*i<=n;i+=2){
-        if(v[i-1]!=-1) continue;
-        for(llint j=i*i;j<=n;j+=(i<<1)) v[j-1]=i;
-    }
-    while(n!=1){
-        if(v[n-1]==-1) primeFactors.pb(n),n=1;
-        else primeFactors.pb(v[n-1]),n/=v[n-1];
-    }
+//PRIME FACTORIZATION
+//returns a vector with prime factors of the given number filled in it;
+//eg: for n=4500, it returns {2,2,3,3,5,5,5}
+
+//(i)  SPF
+//returns a vector with each index filled with it's smallest prime factor upto n;
+vector<llint> spf(llint n){
+    vector<llint> v(n+1,1);
+    for(llint i=0;i<n+1;i+=2) v[i]=2; 
+    for(llint i=3;i<n+1;i+=2) if(v[i]==1) for(llint j=i;j<n+1;j+=(i<<1)) if(v[j]==1) v[j]=i;
+    return v;
+}
+
+//(ii) Prime Factorization
+vector<llint> prFactors(llint n){
+    vector<llint> primeFactors;
+    vector<llint> v=spf(n);
+    while(n!=1) primeFactors.pb(v[n]),n/=v[n];
+    return primeFactors;
 }
 //CHECKED
 //======================================================
@@ -292,8 +299,8 @@ void prmFactors(vector<llint>& primeFactors, llint n){
 //returns a vector with each index filled with it's smallest prime factor upto n;
 vector<llint> spf(llint n){
     vector<llint> v(n+1,1);
-    v[0]=2;
-    for(llint i=2;i<n+1;i++) if(v[i]==1) for(llint j=i;j<n+1;j+=i) if(v[j]==1) v[j]=i;
+    for(llint i=0;i<n+1;i+=2) v[i]=2;
+    for(llint i=3;i<n+1;i+=2) if(v[i]==1) for(llint j=i;j<n+1;j+=(i<<1)) if(v[j]==1) v[j]=i;
     return v;
 }
 //CHECKED
@@ -348,19 +355,6 @@ llint power(llint n, llint exp, llint mod){
 llint gcd(llint a, llint b){
     if(!a) return b;
     return gcd(b%a,a);
-}
-//CHECKED
-//======================================================
-
-//Square Root using Binary Search
-//max value of n can be 2^63 - 1 and thus sqrt(n) <= 2^32 i.e. the upper limit of an unsigned int;
-uint sqRoot(llint n){
-    uint l=0,r=uintMax,mid=l+(r-l)>>1;
-    while(l!=r){
-        if((llint)mid*mid < n) l=mid+1,mid=l+((r-l)>>1);
-        else r=mid-1,mid=l+((r-l)>>1);
-    }
-    return (llint)mid;
 }
 //CHECKED
 //======================================================
