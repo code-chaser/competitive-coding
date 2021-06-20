@@ -67,7 +67,6 @@ inline void codechaser(){
     cout<<ans<<"\n";
     return;
 }
-
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
