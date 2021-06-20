@@ -55,8 +55,8 @@ const ull ullMax=18446744073709551615; //+(1<<64) - 1
 const llint Max=9223372036854775807;   //+(1<<63) - 1
 const llint Min=-9223372036854775808;  //-(1<<63)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-llint power(llint n,llint exp);
-void ts(vector<llint>& v,llint od);
+llint power(llint n, llint exp);
+void ts(vector<llint>& v, llint od);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 inline void codechaser(){
     llint n,ans=0;
@@ -85,7 +85,7 @@ llint power(llint n, llint exp){
     }
     return res;
 }
-void ts(vector<llint>& v,llint od){
+void ts(vector<llint>& v, llint od){
     if(!v.size()) return;
     llint n=v.size(),max=abs(v[0]);
     rep0(i,1,n) if(abs(v[i])>max) max=abs(v[i]);

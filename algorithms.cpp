@@ -89,8 +89,9 @@ const llint Min=-9223372036854775808;  //-(1<<63)
     |     21     ||Binary string to decimal int     ||              |
     |     22     ||RADIX SORT                       ||only for +ve  |
     |     23     ||Number to string                 ||              |
-    |     24     ||                                 ||              |
-    |     25     ||                                 ||              |
+    |     24     ||Extended Euclidean Algorithm     ||              |
+    |     25     ||MODULAR MULTIPLICATIVE INVERSE:  ||gcd(a,b)==1   |
+    |            ||(i) & (ii)                       ||              |
     |     26     ||                                 ||              |
     |     27     ||                                 ||              |
     =================================================================
@@ -463,7 +464,7 @@ llint power(llint n, llint exp){
 }
 //(ii) Radix Sort;
 //NOTE: try to keep order between 1 & 3 (incl.);
-void rsort(vector<llint>& v,llint order){
+void rsort(vector<llint>& v, llint order){
     if(!v.size()) return;
     llint n=v.size(),max=abs(v[0]);
     rep0(i,1,n) if(abs(v[i])>max) max=abs(v[i]);
@@ -502,11 +503,56 @@ string numToStr(llint n){
 //CHECKED
 //======================================================
 
+//Extended Euclidean Algorithm
+llint gcdExt(llint a, llint b, llint& x, llint& y){
+    if(!a){
+        x=0,y=1;
+        return b;
+    }
+    int x1,y1,g=gcdExt(b%a,a,x1,y1);
+    y=x1;
+    x=y1-(b/a)*y;
+    return g;
+}
+//NOTE:- x,y might be negative as well;
+//CHECKED
+//======================================================
+
+//MODULAR MULTIPLICATIVE INVERSE
+//(i)  Extended Euclidean Algorithm
+llint gcdExt(llint a, llint b, llint& x, llint& y){
+    if(!a){
+        x=0,y=1;
+        return b;
+    }
+    llint x1,y1,g=gcdExt(b%a,a,x1,y1);
+    y=x1;
+    x=y1-(b/a)*y;
+    return g;
+}
+//(ii) Modular Multiplicative Inverse
+//returns modular multiplicative inverse of 'a' under mod 'b';
+llint modInv(llint a, llint b){
+    llint x,y;
+    gcdExt(a,b,x,y);
+    return x%b;
+}
+//NOTE:- makes sense iff gcd(a,b)==1;
+//CHECKED
+//======================================================
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     return 0;
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+    |---------------------------------------------------|
+    |||   https://codeforces.com/profile/codechaser   |||
+    |||   https://www.codechef.com/users/codechaser   |||
+    |---------------------------------------------------|
+*/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
