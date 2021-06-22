@@ -5,8 +5,8 @@ ___
 
 ### ACHIEVEMENTS
 * Global Rank **1240** in my first ever coding contest;
-    * Contest: &nbsp;&nbsp; <a href="www.codechef.com/DEC20B">December Challenge 2020 Division 2</a>
-    * Platform: &nbsp; <a href="www.codechef.com"><img align="center" src="https://logo.clearbit.com/codechef.com" alt="codechef" height="24" width="" padding="" /></a>
+    * Contest: &nbsp;&nbsp; <a href="https://www.codechef.com/DEC20B">December Challenge 2020 Division 2</a>
+    * Platform: &nbsp; <a href="https://www.codechef.com"><img align="center" src="https://logo.clearbit.com/codechef.com" alt="codechef" height="24" width="" padding="" /></a>
     * Handle: &nbsp;&nbsp;&nbsp;<a href="https://www.codechef.com/users/codechaser" target="blank"> codechaser</a>
     * <img align="center" src="https://user-images.githubusercontent.com/63065397/122634315-19041a00-d0fb-11eb-8db9-9dced957e9ca.png">
 
@@ -14,16 +14,16 @@ ___
 <br>
 
 * Global Rank **445**;
-    * Contest: &nbsp;&nbsp; <a href="www.codechef.com/CCRC21C">CodeChef Div 3 Rated Contest 2021 Division 3</a>
-    * Platform: &nbsp; <a href="www.codechef.com"><img align="center" src="https://logo.clearbit.com/codechef.com" alt="codechef" height="24" width="" padding="" /></a>
+    * Contest: &nbsp;&nbsp; <a href="https://www.codechef.com/CCRC21C">CodeChef Div 3 Rated Contest 2021 Division 3</a>
+    * Platform: &nbsp; <a href="https://www.codechef.com"><img align="center" src="https://logo.clearbit.com/codechef.com" alt="codechef" height="24" width="" padding="" /></a>
     * Handle: &nbsp;&nbsp;&nbsp;<a href="https://www.codechef.com/users/codechaser" target="blank"> codechaser</a>
     * <img align="center" src="https://user-images.githubusercontent.com/63065397/122634260-c6c2f900-d0fa-11eb-885b-2067885bb574.png">
 
 <br>
 
 * Global Rank **43**;
-    * Contest: &nbsp;&nbsp; <a href="www.codechef.com/START4C">May CodeChef Starters 2021 Division 3</a>
-    * Platform: &nbsp; <a href="www.codechef.com"><img align="center" src="https://logo.clearbit.com/codechef.com" alt="codechef" height="24" width="" padding="" /></a>
+    * Contest: &nbsp;&nbsp; <a href="https://www.codechef.com/START4C">May CodeChef Starters 2021 Division 3</a>
+    * Platform: &nbsp; <a href="https://www.codechef.com"><img align="center" src="https://logo.clearbit.com/codechef.com" alt="codechef" height="24" width="" padding="" /></a>
     * Handle: &nbsp;&nbsp;&nbsp;<a href="https://www.codechef.com/users/codechaser1" target="blank"> codechaser1</a>
     * <img align="center" src="https://user-images.githubusercontent.com/63065397/122634236-a3984980-d0fa-11eb-9ea8-889acec7e7d7.png">
 
