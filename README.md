@@ -37,6 +37,6 @@ ___
 
 * <a href="https://www.codechef.com/users/codechaser" target="blank"> codechaser &nbsp;&nbsp;@codechef</a> &nbsp; &nbsp; <a href="https://www.codechef.com/users/codechaser" target="blank"> <img align="center" src="https://logo.clearbit.com/codechef.com" alt="codechaser" height="24" width="" padding="" /></a>&nbsp;&nbsp;&nbsp; Highest Rating: 1714
 * <a href="https://www.codechef.com/users/codechaser1" target="blank"> codechaser1 @codechef</a> &nbsp;&nbsp;&nbsp; <a href="https://www.codechef.com/users/codechaser1" target="blank">  <img align="center" src="https://logo.clearbit.com/codechef.com" alt="codechaser" height="24" width="" padding="" /></a>&nbsp;&nbsp;&nbsp; Highest Rating: 1766
-* <a href="https://codeforces.com/profile/codechaser" target="blank">codechaser  &nbsp;&nbsp;@codeforces</a> &nbsp; <a href="https://codeforces.com/profile/codechaser" target="blank"><img align="center" src="https://logo.clearbit.com/codeforces.com" alt="codechaser" height="24" width="" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Highest Rating: 1348
+* <a href="https://codeforces.com/profile/codechaser" target="blank">codechaser  &nbsp;&nbsp;@codeforces</a> &nbsp; <a href="https://codeforces.com/profile/codechaser" target="blank"><img align="center" src="https://logo.clearbit.com/codeforces.com" alt="codechaser" height="24" width="" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Highest Rating: 1349
 
 ___
