@@ -86,9 +86,10 @@ llint power(llint n, llint exp){
 }
 void ts(vector<llint>& v, llint od){
     if(!v.size()) return;
-    llint n=v.size(),max=abs(v[0]);
-    rep0(i,1,n) if(abs(v[i])>max) max=abs(v[i]);
-    llint k=log10(max)+1;
+    llint n=v.size(),maximum=abs(v[0]);
+    rep0(i,1,n) maximum=max(maximum,abs(v[i]));
+    ifn(maximum) return;
+    llint k=log10(maximum)+1;
     rep0(i,0,ceil((double)k/od)){
         vector<vector<llint>> record(power(10,od));
         rep0(j,0,n) (record[(llint)abs((llint)((v[j])%((llint)power(10,od*(i+1))))/power(10,od*i))]).pb(v[j]);

@@ -466,9 +466,10 @@ llint power(llint n, llint exp){
 //NOTE: try to keep order between 1 & 3 (incl.);
 void rsort(vector<llint>& v, llint order){
     if(!v.size()) return;
-    llint n=v.size(),max=abs(v[0]);
-    rep0(i,1,n) if(abs(v[i])>max) max=abs(v[i]);
-    llint k=log10(max)+1;
+    llint n=v.size(),maximum=abs(v[0]);
+    rep0(i,1,n) maximum=max(maximum,abs(v[i]));
+    ifn(maximum) return;
+    llint k=log10(maximum)+1;
     rep0(i,0,ceil((double)k/order)){
         vector<vector<llint>> record(power(10,order));
         rep0(j,0,n) (record[(llint)abs((llint)((v[j])%((llint)power(10,order*(i+1))))/power(10,order*i))]).pb(v[j]);
