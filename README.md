@@ -17,7 +17,7 @@ ___
     * Contest: &nbsp;&nbsp; <a href="https://www.codechef.com/CCRC21C">CodeChef Div 3 Rated Contest 2021 Division 3</a>
     * Platform: &nbsp; <a href="https://www.codechef.com"><img align="center" src="https://logo.clearbit.com/codechef.com" alt="codechef" height="24" width="" padding="" /></a>
     * Handle: &nbsp;&nbsp;&nbsp;<a href="https://www.codechef.com/users/codechaser" target="blank"> codechaser</a>
-    * <img align="center" src="https://user-images.githubusercontent.com/63065397/122634260-c6c2f900-d0fa-11eb-885b-2067885bb574.png">
+    * <img align="center" src="https://user-images.githubusercontent.com/63065397/123522305-1cd70400-d6da-11eb-8c99-abaec7172dbf.png">
 
 <br>
 
