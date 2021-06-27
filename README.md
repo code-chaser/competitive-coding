@@ -27,6 +27,15 @@ ___
     * Handle: &nbsp;&nbsp;&nbsp;<a href="https://www.codechef.com/users/codechaser1" target="blank"> codechaser1</a>
     * <img align="center" src="https://user-images.githubusercontent.com/63065397/122634236-a3984980-d0fa-11eb-9ea8-889acec7e7d7.png">
 
+<br>
+
+* Global Rank **11**;
+    * Contest: &nbsp;&nbsp; <a href="https://www.codechef.com/START5C">June CodeChef Starters 2021 Division 3</a>
+    * Platform: &nbsp; <a href="https://www.codechef.com"><img align="center" src="https://logo.clearbit.com/codechef.com" alt="codechef" height="24" width="" padding="" /></a>
+    * Handle: &nbsp;&nbsp;&nbsp;<a href="https://www.codechef.com/users/knight0" target="blank"> knight0</a>
+    * <img align="center" src="https://user-images.githubusercontent.com/63065397/123551605-291d9880-d790-11eb-8d62-d87a01cdf47f.png">
+
+
 
 
 
