@@ -30,8 +30,8 @@ using namespace std;
 #define setbits(x) __builtin_popcountll(x)
 #define tzerobits(x) __builtin_ctzll(x)
 #define lzerobits(x) __builtin_clzll(x)
-#define gcd __gcd
-#define lcm(x,y) (x*y/gcd(x,y))
+#define gcd(x,y) __gcd(x,y)
+#define lcm(x,y) ((x*y)/gcd(x,y))
 #define fileinput freopen("input.txt","r",stdin);
 #define fileoutput freopen("output.txt","w",stdout);
 #define clock1 tttt=clock();
@@ -103,6 +103,7 @@ void ts(vector<llint>& v, llint od){
     |---------------------------------------------------|
     |||   https://codeforces.com/profile/codechaser   |||
     |||   https://www.codechef.com/users/codechaser   |||
+    |||        https://github.com/code-chaser         |||
     |---------------------------------------------------|
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////

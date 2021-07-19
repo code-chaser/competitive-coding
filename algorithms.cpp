@@ -30,8 +30,8 @@ using namespace std;
 #define setbits(x) __builtin_popcountll(x)
 #define tzerobits(x) __builtin_ctzll(x)
 #define lzerobits(x) __builtin_clzll(x)
-#define gcd __gcd
-#define lcm(x,y) (x*y/gcd(x,y))
+#define gcd(x,y) __gcd(x,y)
+#define lcm(x,y) ((x*y)/gcd(x,y))
 #define fileinput freopen("input.txt","r",stdin);
 #define fileoutput freopen("output.txt","w",stdout);
 #define clock1 tttt=clock();
@@ -464,6 +464,8 @@ llint power(llint n, llint exp){
 }
 //(ii) Radix Sort;
 //NOTE: try to keep order between 1 & 3 (incl.);
+//NOTE: it considers absolute value of all the numbers while sorting;
+//      i.e. {-2,0,1,3,4} will convert to {0,1,-2,3,4};
 void rsort(vector<llint>& v, llint order){
     if(!v.size()) return;
     llint n=v.size(),maximum=abs(v[0]);
@@ -553,6 +555,7 @@ int main(){
     |---------------------------------------------------|
     |||   https://codeforces.com/profile/codechaser   |||
     |||   https://www.codechef.com/users/codechaser   |||
+    |||        https://github.com/code-chaser         |||
     |---------------------------------------------------|
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
