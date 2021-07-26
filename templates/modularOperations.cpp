@@ -214,37 +214,39 @@ llint MLLINT<MOD>::operator=(llint A){
 
 //arithmetic binary operators
 template<const llint MOD>
-MLLINT operator+(llint A){
+MLLINT<MOD> MLLINT<MOD>::operator+(llint A){
     MLLINT<MOD> B(A);
     (B.value)-=(MOD-value);
     if(B.value<0) B.value+=MOD;
     return B;
 }
 template<const llint MOD>
-MLLINT operator+(MLLINT A){
+MLLINT<MOD> MLLINT<MOD>::operator+(MLLINT<MOD> A){
     A.value-=(MOD-value);
     if(A.value<0) A.value+=MOD;
     return A;
 }
 template<const llint MOD>
-MLLINT operator+(bool A){
+MLLINT<MOD> MLLINT<MOD>::operator+(bool A){
     return (*this)+(llint)A;
 }
 template<const llint MOD>
-MLLINT operator-(llint A){
+MLLINT<MOD> MLLINT<MOD>::operator-(llint A){
     MLLINT<MOD> B(A);
-    (B.value)+=(MOD-value);
+    B.value=value-B.value;
+    if(B.value<0) B.value+=MOD;
     return B;
 }
 template<const llint MOD>
-MLLINT operator+(MLLINT A){
-    A.value-=(MOD-value);
+MLLINT<MOD> MLLINT<MOD>::operator-(MLLINT<MOD> A){
+    A.value=value-A.value;
     if(A.value<0) A.value+=MOD;
     return A;
 }
+/*
 template<const llint MOD>
-MLLINT operator+(bool A){
-    return (*this)+(llint)A;
+MLLINT<MOD> MLLINT<MOD>::operator-(bool A){
+    return (*this)-(llint)A;
 }
 template<const llint MOD>
 MLLINT operator*(llint){
@@ -319,6 +321,7 @@ MLLINT operator/=(bool){
 
 }
 //---------------------------
+*/
 
 //arithmetic unary operators
 //prefix incr./dec. operators)
@@ -357,6 +360,7 @@ MLLINT<MOD> MLLINT<MOD>::operator--(int){
 //---------------------------
 //---------------------------
 
+/*
 //modular binary operators
 MLLINT operator%(llint);
 MLLINT operator%(MLLINT);
@@ -415,6 +419,7 @@ bool operator||(bool);
 //logical unary operator ("!")
 bool operator!();
 //---------------------------
+*/
 
 //istream & ostream operators
 template<const llint MOD>
@@ -435,9 +440,11 @@ istream& operator>>(istream& cin, MLLINT<MOD>& A){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 inline void codechaser(){
     MLLINT<100> a(-10223);
-    cout<<a<<endl;
+    MLLINT<100> b(-129);
+    MLLINT<100> c=a+b; 
+    cout<<c<<endl;
     cin>>a;
-    cout<<--a<<endl<<a--<<endl<<--a<<endl;
+    cout<<--a<<endl<<a--<<endl<<c+a-b<<endl;
     return;
 }
 int main(){
