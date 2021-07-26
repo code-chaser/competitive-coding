@@ -164,6 +164,27 @@ public:
     bool operator!();
 //---------------------------
 
+//comparison binary operators
+    bool operator==(llint);
+    bool operator==(MLLINT);
+    bool operator==(bool);
+    bool operator!=(llint);
+    bool operator!=(MLLINT);
+    bool operator!=(bool);
+    bool operator<(llint);
+    bool operator<(MLLINT);
+    bool operator<(bool);
+    bool operator<=(llint);
+    bool operator<=(MLLINT);
+    bool operator<=(bool);
+    bool operator>(llint);
+    bool operator>(MLLINT);
+    bool operator>(bool);
+    bool operator>=(llint);
+    bool operator>=(MLLINT);
+    bool operator>=(bool);
+//---------------------------
+
 //istream & ostream operators
     template<const llint M>
     friend ostream& operator<<(ostream&, MLLINT<M>);
@@ -188,6 +209,114 @@ llint MLLINT<MOD>::operator=(llint A){
     value=(A%MOD);
     if(value<0) value+=MOD;
     return A;
+}
+//---------------------------
+
+//arithmetic binary operators
+template<const llint MOD>
+MLLINT operator+(llint A){
+    MLLINT<MOD> B(A);
+    (B.value)-=(MOD-value);
+    if(B.value<0) B.value+=MOD;
+    return B;
+}
+template<const llint MOD>
+MLLINT operator+(MLLINT A){
+    A.value-=(MOD-value);
+    if(A.value<0) A.value+=MOD;
+    return A;
+}
+template<const llint MOD>
+MLLINT operator+(bool A){
+    return (*this)+(llint)A;
+}
+template<const llint MOD>
+MLLINT operator-(llint A){
+    MLLINT<MOD> B(A);
+    (B.value)+=(MOD-value);
+    return B;
+}
+template<const llint MOD>
+MLLINT operator+(MLLINT A){
+    A.value-=(MOD-value);
+    if(A.value<0) A.value+=MOD;
+    return A;
+}
+template<const llint MOD>
+MLLINT operator+(bool A){
+    return (*this)+(llint)A;
+}
+template<const llint MOD>
+MLLINT operator*(llint){
+
+}
+template<const llint MOD>
+MLLINT operator*(MLLINT){
+    
+}
+template<const llint MOD>
+MLLINT operator*(bool){
+
+}
+template<const llint MOD>
+MLLINT operator/(llint){
+
+}
+template<const llint MOD>
+MLLINT operator/(MLLINT){
+
+}
+template<const llint MOD>
+MLLINT operator/(bool){
+
+}
+template<const llint MOD>
+MLLINT operator+=(llint){
+
+}
+template<const llint MOD>
+MLLINT operator+=(MLLINT){
+
+}
+template<const llint MOD>
+MLLINT operator+=(bool){
+
+}
+template<const llint MOD>
+MLLINT operator-=(llint){
+
+}
+template<const llint MOD>
+MLLINT operator-=(MLLINT){
+
+}
+template<const llint MOD>
+MLLINT operator-=(bool){
+
+}
+template<const llint MOD>
+MLLINT operator*=(llint){
+
+}
+template<const llint MOD>
+MLLINT operator*=(MLLINT){
+
+}
+template<const llint MOD>
+MLLINT operator*=(bool){
+
+}
+template<const llint MOD>
+MLLINT operator/=(llint){
+
+}
+template<const llint MOD>
+MLLINT operator/=(MLLINT){
+
+}
+template<const llint MOD>
+MLLINT operator/=(bool){
+
 }
 //---------------------------
 
@@ -229,18 +358,62 @@ MLLINT<MOD> MLLINT<MOD>::operator--(int){
 //---------------------------
 
 //modular binary operators
+MLLINT operator%(llint);
+MLLINT operator%(MLLINT);
+MLLINT operator%(bool);
+MLLINT operator%=(llint);
+MLLINT operator%=(MLLINT);
+MLLINT operator%=(bool);
 //---------------------------
 
 //bitwise binary operators
+MLLINT operator&(llint);
+MLLINT operator&(MLLINT);
+MLLINT operator&(bool);
+MLLINT operator|(llint);
+MLLINT operator|(MLLINT);
+MLLINT operator|(bool);
+MLLINT operator^(llint);
+MLLINT operator^(MLLINT);
+MLLINT operator^(bool);
+MLLINT operator<<(llint);
+MLLINT operator<<(MLLINT);
+MLLINT operator<<(bool);
+MLLINT operator>>(llint);
+MLLINT operator>>(MLLINT);
+MLLINT operator>>(bool);
+MLLINT operator&=(MLLINT);
+MLLINT operator&=(llint);
+MLLINT operator&=(bool);
+MLLINT operator|=(llint);
+MLLINT operator|=(MLLINT);
+MLLINT operator|=(bool);
+MLLINT operator^=(llint);
+MLLINT operator^=(MLLINT);
+MLLINT operator^=(bool);
+MLLINT operator<<=(llint);
+MLLINT operator<<=(MLLINT);
+MLLINT operator<<=(bool);
+MLLINT operator>>=(llint);
+MLLINT operator>>=(MLLINT);
+MLLINT operator>>=(bool);
 //---------------------------
 
 //bitwise unary operator ("~")
+MLLINT operator~();
 //---------------------------
 
 //logical binary operators
+bool operator&&(llint);
+bool operator&&(MLLINT);
+bool operator&&(bool);
+bool operator||(llint);
+bool operator||(MLLINT);
+bool operator||(bool);
 //---------------------------
 
 //logical unary operator ("!")
+bool operator!();
 //---------------------------
 
 //istream & ostream operators
