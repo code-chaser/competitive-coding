@@ -1,4 +1,4 @@
-# Competitive Coding &nbsp; <!--![views](https://visitor-badge.glitch.me/badge?page_id=code-chaser.competitive-coding) &nbsp;-->[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Competitive Coding &nbsp; <!--![views](https://visitor-badge.glitch.me/badge?page_id=code-chaser.competitive-coding) &nbsp;-->[![License: MIT](https://img.shields.io/badge/License-Personal-yellow.svg)](https://github.com/code-chaser/Competitive-Coding/blob/main/LICENSE)
 files related to competitive coding, like my coding template, saved algorithms etc
 
 ___
