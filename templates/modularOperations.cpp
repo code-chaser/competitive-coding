@@ -220,16 +220,19 @@ MLLINT<MOD> MLLINT<MOD>::operator+(llint A){
     if(B.value<0) B.value+=MOD;
     return B;
 }
+
 template<const llint MOD>
 MLLINT<MOD> MLLINT<MOD>::operator+(MLLINT<MOD> A){
-    A.value-=(MOD-value);
-    if(A.value<0) A.value+=MOD;
-    return A;
+    // A.value-=(MOD-value);
+    // if(A.value<0) A.value+=MOD;
+    return (*this)+A.value;
 }
+
 template<const llint MOD>
 MLLINT<MOD> MLLINT<MOD>::operator+(bool A){
     return (*this)+(llint)A;
 }
+
 template<const llint MOD>
 MLLINT<MOD> MLLINT<MOD>::operator-(llint A){
     MLLINT<MOD> B(A);
@@ -237,21 +240,26 @@ MLLINT<MOD> MLLINT<MOD>::operator-(llint A){
     if(B.value<0) B.value+=MOD;
     return B;
 }
+
 template<const llint MOD>
 MLLINT<MOD> MLLINT<MOD>::operator-(MLLINT<MOD> A){
     A.value=value-A.value;
     if(A.value<0) A.value+=MOD;
     return A;
 }
-/*
+
 template<const llint MOD>
 MLLINT<MOD> MLLINT<MOD>::operator-(bool A){
     return (*this)-(llint)A;
 }
-template<const llint MOD>
-MLLINT operator*(llint){
 
+template<const llint MOD>
+MLLINT<MOD> operator*(llint A){
+    MLLINT<MOD> B;
+    return B;
 }
+
+/*
 template<const llint MOD>
 MLLINT operator*(MLLINT){
     
@@ -444,7 +452,7 @@ inline void codechaser(){
     MLLINT<100> c=a+b; 
     cout<<c<<endl;
     cin>>a;
-    cout<<--a<<endl<<a--<<endl<<c+a-b<<endl;
+    cout<<--a<<endl<<a--<<endl<<c+a-10<<endl;
     return;
 }
 int main(){
