@@ -275,6 +275,8 @@ map<llint,llint> prmFactors(llint n){
     if(n>1) primeFactors[n]=1;
     return primeFactors;
 }
+//TIME COMPLEXITY:
+//O( max(sqrt(largest prime factor), largest prime factor of n having it's exponent in n > 1) )
 //CHECKED
 //======================================================
 
