@@ -62,6 +62,36 @@ const llint Max=9223372036854775807;    //+(1<<63) - 1
 const llint Min=-9223372036854775808;   //-(1<<63)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 template <class T1, class T2>
+ostream& operator<<(ostream& cout, pair<T1,T2>& p);
+template <class T>
+ostream& operator<<(ostream& cout, vector<T>& v);
+template <class T1, class T2>
+istream& operator>>(istream& cin, pair<T1,T2>& p);
+template <class T>
+istream& operator>>(istream& cin, vector<T>& v);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+llint power(llint n, llint exp);
+void ts(vector<llint>& v, llint od);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+inline void codechaser(){
+    llint n,ans=0;
+    cin>>n;
+    vector<llint> v(n);
+    cin>>v;
+    
+    cout<<ans<<"\n";
+    return;
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    llint t=1;
+    cin>>t;
+    while(t--) codechaser();
+    return 0;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+template <class T1, class T2>
 ostream& operator<<(ostream& cout, pair<T1,T2>& p){
     cout<<p.first<<" "<<p.second;
     return cout;
@@ -81,27 +111,6 @@ template <class T>
 istream& operator>>(istream& cin, vector<T>& v){
     for(auto& i:v) cin>>i;
     return cin;
-}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-llint power(llint n, llint exp);
-void ts(vector<llint>& v, llint od);
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-inline void codechaser(){
-    llint n,ans=0;
-    cin>>n;
-    vector<llint> v(n);
-    input0(v);
-    
-    cout<<ans<<"\n";
-    return;
-}
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    llint t=1;
-    cin>>t;
-    while(t--) codechaser();
-    return 0;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 llint power(llint n, llint exp){
