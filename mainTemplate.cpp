@@ -14,7 +14,7 @@ using namespace std;
 #define rep3(i,k,n,a) for(llint i=k;(i>n)&&(a);i--)
 #define rep0(i,k,n) rep2(i,k,n,1)
 #define rep1(i,k,n) rep3(i,k,n,1)
-#define br cout<<"\n";
+#define br cout<<"\n"
 #define yea cout<<"YES\n"
 #define nah cout<<"NO\n"
 #define print0(x) for(auto i:x) cout<<i<<" "; br;
@@ -23,13 +23,19 @@ using namespace std;
 #define input1(x) for(auto &i:x) cin>>i.first>>i.second;
 #define input2(x,n) rep0(i,0,n) llint inp,cin>>inp,x.insert(inp);
 #define pb push_back
+#define pf push_front
+#define popb pop_back
+#define popf pop_front
 #define eb emplace_back
 #define mp make_pair
+#define f first
+#define s second
 #define all(x) x.begin(),x.end()
+#define rall(x) x.rbegin(),x.rend()
 #define ifn(x) if(!(x))
 #define setbits(x) __builtin_popcountll(x)
-#define tzerobits(x) __builtin_ctzll(x)
-#define lzerobits(x) __builtin_clzll(x)
+#define tzerobits(x) __builtin_ctzll(x) //000001101(00) -> 2
+#define lzerobits(x) __builtin_clzll(x) //(00000)110100 -> 5
 #define gcd(x,y) __gcd(x,y)
 #define lcm(x,y) ((x*y)/gcd(x,y))
 #define fileinput freopen("input.txt","r",stdin);
@@ -48,12 +54,34 @@ typedef vector<bool> vb;
 typedef pair<llint,llint> pll;
 typedef pair<llint,string> pls;
 typedef map<llint,llint> mll;
-const uint uintMax=4294967295;         //+(1<<32) - 1
-const int intMax=2147483647;           //+(1<<31) - 1
-const int intMin=-2147483648;          //-(1<<31)
-const ull ullMax=18446744073709551615; //+(1<<64) - 1
-const llint Max=9223372036854775807;   //+(1<<63) - 1
-const llint Min=-9223372036854775808;  //-(1<<63)
+const uint uintMax=4294967295;          //+(1<<32) - 1
+const int intMax=2147483647;            //+(1<<31) - 1
+const int intMin=-2147483648;           //-(1<<31)
+const ull ullMax=18446744073709551615;  //+(1<<64) - 1
+const llint Max=9223372036854775807;    //+(1<<63) - 1
+const llint Min=-9223372036854775808;   //-(1<<63)
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+template <class T1, class T2>
+ostream& operator<<(ostream& cout, pair<T1,T2>& p){
+    cout<<p.first<<" "<<p.second;
+    return cout;
+}
+template <class T>
+ostream& operator<<(ostream& cout, vector<T>& v){
+    llint cnt=0;
+    for(auto& i:v) cout<<i<<((++cnt)!=v.size()?" ":"");
+    return cout;
+}
+template <class T1, class T2>
+istream& operator>>(istream& cin, pair<T1,T2>& p){
+    cin>>p.first>>p.second;
+    return cin;
+}
+template <class T>
+istream& operator>>(istream& cin, vector<T>& v){
+    for(auto& i:v) cin>>i;
+    return cin;
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 llint power(llint n, llint exp);
 void ts(vector<llint>& v, llint od);
