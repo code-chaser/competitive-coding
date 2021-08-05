@@ -3,18 +3,19 @@
 --||author : codechaser||-- 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+//COMPILER SUPPORT : STD=GNU C++14 or ABOVE
 #include <bits/stdc++.h>
 using namespace std;
 //OPTIMIZATION
 #pragma GCC optimize("O2")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("avx,avx2,fma")
-
+//DEFINE STATEMENTS
 #define rep2(i,k,n,a) for(llint i=k;(i<n)&&(a);i++)
 #define rep3(i,k,n,a) for(llint i=k;(i>n)&&(a);i--)
 #define rep0(i,k,n) rep2(i,k,n,1)
 #define rep1(i,k,n) rep3(i,k,n,1)
-#define br cout<<"\n";
+#define br cout<<"\n"
 #define yea cout<<"YES\n"
 #define nah cout<<"NO\n"
 #define print0(x) for(auto i:x) cout<<i<<" "; br;
@@ -23,13 +24,19 @@ using namespace std;
 #define input1(x) for(auto &i:x) cin>>i.first>>i.second;
 #define input2(x,n) rep0(i,0,n) llint inp,cin>>inp,x.insert(inp);
 #define pb push_back
+#define pf push_front
+#define popb pop_back
+#define popf pop_front
 #define eb emplace_back
 #define mp make_pair
+#define f first
+#define s second
 #define all(x) x.begin(),x.end()
+#define rall(x) x.rbegin(),x.rend()
 #define ifn(x) if(!(x))
 #define setbits(x) __builtin_popcountll(x)
-#define tzerobits(x) __builtin_ctzll(x)
-#define lzerobits(x) __builtin_clzll(x)
+#define tzerobits(x) __builtin_ctzll(x) //000001101(00) -> 2
+#define lzerobits(x) __builtin_clzll(x) //(00000)110100 -> 5
 #define gcd(x,y) __gcd(x,y)
 #define lcm(x,y) ((x*y)/gcd(x,y))
 #define fileinput freopen("input.txt","r",stdin);
@@ -48,13 +55,12 @@ typedef vector<bool> vb;
 typedef pair<llint,llint> pll;
 typedef pair<llint,string> pls;
 typedef map<llint,llint> mll;
-const uint uintMax=4294967295;         //+(1<<32) - 1
-const int intMax=2147483647;           //+(1<<31) - 1
-const int intMin=-2147483648;          //-(1<<31)
-const ull ullMax=18446744073709551615; //+(1<<64) - 1
-const llint Max=9223372036854775807;   //+(1<<63) - 1
-const llint Min=-9223372036854775808;  //-(1<<63)
-
+const uint uintMax=4294967295;          //+(1<<32) - 1
+const int intMax=2147483647;            //+(1<<31) - 1
+const int intMin=-2147483648;           //-(1<<31)
+const ull ullMax=18446744073709551615;  //+(1<<64) - 1
+const llint Max=9223372036854775807;    //+(1<<63) - 1
+const llint Min=-9223372036854775808;   //-(1<<63)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 {
@@ -117,8 +123,7 @@ llint setBits(llint n){
 
 //checks if the bit at ith index is set;
 bool iBit(llint n, llint i){
-    n>>i;
-    return n&1;
+    return (n>>i)&1;
 }
 //CHECKED
 //======================================================
