@@ -3,13 +3,14 @@
 --||author : codechaser||-- 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+//COMPILER SUPPORT : STD=GNU C++14 or ABOVE
 #include <bits/stdc++.h>
 using namespace std;
 //OPTIMIZATION
 #pragma GCC optimize("O2")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("avx,avx2,fma")
-
+//DEFINE STATEMENTS
 #define rep2(i,k,n,a) for(llint i=k;(i<n)&&(a);i++)
 #define rep3(i,k,n,a) for(llint i=k;(i>n)&&(a);i--)
 #define rep0(i,k,n) rep2(i,k,n,1)
@@ -61,17 +62,17 @@ const ull ullMax=18446744073709551615;  //+(1<<64) - 1
 const llint Max=9223372036854775807;    //+(1<<63) - 1
 const llint Min=-9223372036854775808;   //-(1<<63)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-template<class... T>
-void print(T&... arg);
-template<class T1, class T2>
-ostream& operator<<(ostream& cout, pair<T1,T2>& p);
-template<class T>
-ostream& operator<<(ostream& cout, vector<T>& v);
-template<class... T>
+template<typename... T>
+void print(T... arg);
+template<typename T1, typename T2>
+ostream& operator<<(ostream& cout, pair<T1,T2> p);
+template<typename T>
+ostream& operator<<(ostream& cout, vector<T> v);
+template<typename... T>
 void input(T&... arg);
-template<class T1, class T2>
+template<typename T1, typename T2>
 istream& operator>>(istream& cin, pair<T1,T2>& p);
-template<class T>
+template<typename T>
 istream& operator>>(istream& cin, vector<T>& v);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 llint power(llint n, llint exp);
@@ -95,31 +96,31 @@ int main(){
     return 0;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-template<class... T>
-void print(T&... arg){
+template<typename... T>
+void print(T... arg){
     ((cout<<arg), ...);
 }
-template<class T1, class T2>
-ostream& operator<<(ostream& cout, pair<T1,T2>& p){
+template<typename T1, typename T2>
+ostream& operator<<(ostream& cout, pair<T1,T2> p){
     cout<<p.first<<" "<<p.second;
     return cout;
 }
-template<class T>
-ostream& operator<<(ostream& cout, vector<T>& v){
+template<typename T>
+ostream& operator<<(ostream& cout, vector<T> v){
     llint cnt=0;
     for(auto& i:v) cout<<i<<((++cnt)!=v.size()?" ":"");
     return cout;
 }
-template<class... T>
+template<typename... T>
 void input(T&... arg){
     ((cin>>arg), ...);
 }
-template<class T1, class T2>
+template<typename T1, typename T2>
 istream& operator>>(istream& cin, pair<T1,T2>& p){
     cin>>p.first>>p.second;
     return cin;
 }
-template<class T>
+template<typename T>
 istream& operator>>(istream& cin, vector<T>& v){
     for(auto& i:v) cin>>i;
     return cin;
