@@ -61,13 +61,17 @@ const ull ullMax=18446744073709551615;  //+(1<<64) - 1
 const llint Max=9223372036854775807;    //+(1<<63) - 1
 const llint Min=-9223372036854775808;   //-(1<<63)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-template <class T1, class T2>
+template<class... T>
+void print(T&... arg);
+template<class T1, class T2>
 ostream& operator<<(ostream& cout, pair<T1,T2>& p);
-template <class T>
+template<class T>
 ostream& operator<<(ostream& cout, vector<T>& v);
-template <class T1, class T2>
+template<class... T>
+void input(T&... arg);
+template<class T1, class T2>
 istream& operator>>(istream& cin, pair<T1,T2>& p);
-template <class T>
+template<class T>
 istream& operator>>(istream& cin, vector<T>& v);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 llint power(llint n, llint exp);
@@ -75,11 +79,11 @@ void ts(vector<llint>& v, llint od);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 inline void codechaser(){
     llint n,ans=0;
-    cin>>n;
+    input(n);
     vector<llint> v(n);
-    cin>>v;
+    input(v);
     
-    cout<<ans<<"\n";
+    print(ans,"\n");
     return;
 }
 int main(){
@@ -91,23 +95,31 @@ int main(){
     return 0;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-template <class T1, class T2>
+template<class... T>
+void print(T&... arg){
+    ((cout<<arg), ...);
+}
+template<class T1, class T2>
 ostream& operator<<(ostream& cout, pair<T1,T2>& p){
     cout<<p.first<<" "<<p.second;
     return cout;
 }
-template <class T>
+template<class T>
 ostream& operator<<(ostream& cout, vector<T>& v){
     llint cnt=0;
     for(auto& i:v) cout<<i<<((++cnt)!=v.size()?" ":"");
     return cout;
 }
-template <class T1, class T2>
+template<class... T>
+void input(T&... arg){
+    ((cin>>arg), ...);
+}
+template<class T1, class T2>
 istream& operator>>(istream& cin, pair<T1,T2>& p){
     cin>>p.first>>p.second;
     return cin;
 }
-template <class T>
+template<class T>
 istream& operator>>(istream& cin, vector<T>& v){
     for(auto& i:v) cin>>i;
     return cin;
