@@ -7,7 +7,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 //OPTIMIZATION
-#pragma GCC optimize("O2")
+#pragma GCC optimize("O3")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("avx,avx2,fma")
 //DEFINE STATEMENTS
@@ -31,6 +31,7 @@ using namespace std;
 #define mp make_pair
 #define f first
 #define s second
+#define FIX cout<<fixed<<setprecision(12);
 #define all(x) x.begin(),x.end()
 #define rall(x) x.rbegin(),x.rend()
 #define ifn(x) if(!(x))
@@ -80,9 +81,9 @@ void ts(vector<llint>& v, llint od);
 inline void codechaser(){
     llint n,ans=0;
     input(n);
-    vector<llint> v(n);
+    vl v(n);
     input(v);
-    
+
     print(ans,"\n");
     return;
 }
