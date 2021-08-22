@@ -112,10 +112,7 @@ const llint Min=-9223372036854775808;   //-(1<<63)
 //Alternative to __builtin_popcountll(n);
 llint setBits(llint n){
     llint count=0;
-    while(n){
-        n&=(n-1);
-        count++;
-    }
+    while(n) n&=(n-1),count++;
     return count;
 }
 //CHECKED
@@ -135,7 +132,7 @@ bool iBit(llint n, llint i){
 void sieve(vector<bool>& v){
 	llint n=v.size();
     v[0]=v[1]=false;
-    for(llint i=2;(i*i)<n;i++){
+    for(llint i=2;(i*i)<=n;i++){
         if(!v[i]) continue;
         for(llint j=(i*i);j<n;j+=i) 
             v[j]=false;
@@ -151,7 +148,7 @@ void sieve(vector<bool>& v){
 void sieve(vector<llint>& primes, llint n){
     vector<bool> v(n+1,true);
     v[0]=v[1]=false;
-    for(llint i=2;(i*i)<n;i++){
+    for(llint i=2;(i*i)<=n;i++){
         if(!v[i]) continue;
         for(llint j=(i*i);j<n+1;j+=i) 
             v[j]=false;
@@ -170,7 +167,7 @@ vector<llint> sieve(llint k){
     vector<llint> primes;
     //for 1 isn't prime;
     v[0]=false;
-    for(llint i=3;(i*i)<n;i+=2){
+    for(llint i=3;(i*i)<=n;i+=2){
         if(!(v[i>>1])) continue;
         for(llint j=i*i;j<n+1;j+=(i<<1))
             v[j>>1]=false;
@@ -190,7 +187,7 @@ void sieve(vector<llint>& primes, llint n){
     vector<bool> v(n>>1,true);
     //for 1 isn't prime;
     v[0]=false;
-    for(llint i=3;(i*i)<n;i+=2){
+    for(llint i=3;(i*i)<=n;i+=2){
         if(!(v[i>>1])) continue;
         for(llint j=i*i;j<n+1;j+=(i<<1))
             v[j>>1]=false;
