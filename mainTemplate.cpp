@@ -68,21 +68,22 @@ template<typename T1, typename T2>
 ostream& operator<<(ostream& cout, pair<T1,T2> p);
 template<typename T>
 ostream& operator<<(ostream& cout, vector<T> v);
+template<typename T1, typename T2>
+ostream& operator<<(ostream& cout, map<T1,T2> v);
 template<typename... T>
 void input(T&... arg);
 template<typename T1, typename T2>
 istream& operator>>(istream& cin, pair<T1,T2>& p);
 template<typename T>
 istream& operator>>(istream& cin, vector<T>& v);
+llint power(llint n, llint exp, llint mod);
 llint power(llint n, llint exp);
 void ts(vector<llint>& v, llint od);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 inline void codechaser(){
     llint n,ans=0;
     input(n);
-    vl v(n);
-    input(v);
-
+    
     print(ans,"\n");
     return;
 }
@@ -110,6 +111,11 @@ ostream& operator<<(ostream& cout, vector<T> v){
     for(auto& i:v) cout<<i<<((++cnt)!=v.size()?" ":"");
     return cout;
 }
+template<typename T1, typename T2>
+    for(auto i:m) cout<<i<<"\n";
+    cout<<"\n";
+    return cout;
+}
 template<typename... T>
 void input(T&... arg){
     ((cin>>arg), ...);
@@ -123,6 +129,14 @@ template<typename T>
 istream& operator>>(istream& cin, vector<T>& v){
     for(auto& i:v) cin>>i;
     return cin;
+}
+llint power(llint n, llint exp, llint mod){
+    llint res=1;
+    while(exp){
+        if(exp&1) res=(res*(n%mod))%mod,exp--;
+        else n=((n%mod)*(n%mod))%mod,exp>>=1;
+    }
+    return (res%mod);
 }
 llint power(llint n, llint exp){
     llint res=1;
