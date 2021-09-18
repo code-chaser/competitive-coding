@@ -112,6 +112,7 @@ ostream& operator<<(ostream& cout, vector<T> v){
     return cout;
 }
 template<typename T1, typename T2>
+ostream& operator<<(ostream& cout, map<T1,T2> m){
     for(auto i:m) cout<<i<<"\n";
     cout<<"\n";
     return cout;
