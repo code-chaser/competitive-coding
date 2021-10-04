@@ -516,7 +516,7 @@ llint gcdExt(llint a, llint b, llint& x, llint& y){
         x=0,y=1;
         return b;
     }
-    int x1,y1,g=gcdExt(b%a,a,x1,y1);
+    llint x1,y1,g=gcdExt(b%a,a,x1,y1);
     y=x1;
     x=y1-(b/a)*y;
     return g;
