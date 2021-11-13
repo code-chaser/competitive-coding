@@ -381,7 +381,7 @@ llint gcd(llint a, llint b){
 vector<vector<llint>> matPdt(vector<vector<llint>>& mat1, vector<vector<llint>>& mat2){
     llint r1=mat1.size(),c1=mat1[r1-1].size(),r2=mat2.size(),c2=mat2[r2-1].size();
     vector<vector<llint>> result(r1,vector<llint>(c2,0));
-    if(c1!=r2 && c2==r1) matPdt(mat2,mat1);
+    if(c1!=r2 && c2==r1) result=matPdt(mat2,mat1);
     else if (c1==r2){
         for(llint i=0;i<r1;i++) for(llint j=0;j<c2;j++) for(llint k=0;k<(c1+r2)/2;k++) result[i][j]+=((mat1[i][k])*(mat2[k][j]));
         return result;
@@ -407,7 +407,7 @@ vector<vector<llint>> matExp(vector<vector<llint>>& N, llint exp){
 vector<vector<llint>> matPdt(vector<vector<llint>>& mat1, vector<vector<llint>>& mat2){
     llint r1=mat1.size(),c1=mat1[r1-1].size(),r2=mat2.size(),c2=mat2[r2-1].size();
     vector<vector<llint>> result(r1,vector<llint>(c2,0));
-    if(c1!=r2 && c2==r1) matPdt(mat2,mat1);
+    if(c1!=r2 && c2==r1) result=matPdt(mat2,mat1);
     else if (c1==r2){
         for(llint i=0;i<r1;i++) for(llint j=0;j<c2;j++) for(llint k=0;k<(c1+r2)/2;k++) result[i][j]+=((mat1[i][k])*(mat2[k][j]));
         return result;
