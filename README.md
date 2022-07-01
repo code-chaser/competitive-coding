@@ -50,7 +50,7 @@ ___
 ### MAIN HANDLES
 
 * <a href="https://www.codechef.com/users/codechaser" target="blank"> codechaser &nbsp;&nbsp;@codechef</a> &nbsp; &nbsp; <a href="https://www.codechef.com/users/codechaser" target="blank"> <img align="center" src="https://user-images.githubusercontent.com/63065397/123329670-b11a5d00-d55a-11eb-8096-44ca8667f0e3.png" alt="codechaser" height="24" width="" padding="" /></a>&nbsp;&nbsp;&nbsp; Highest Rating: 1862
-* <a href="https://www.codechef.com/users/codechaser1" target="blank"> codechaser1 @codechef</a> &nbsp;&nbsp;&nbsp; <a href="https://www.codechef.com/users/codechaser1" target="blank">  <img align="center" src="https://user-images.githubusercontent.com/63065397/123329670-b11a5d00-d55a-11eb-8096-44ca8667f0e3.png" alt="codechaser" height="24" width="" padding="" /></a>&nbsp;&nbsp;&nbsp; Highest Rating: 1854
+* <a href="https://www.codechef.com/users/codechaser1" target="blank"> codechaser1 @codechef</a> &nbsp;&nbsp;&nbsp; <a href="https://www.codechef.com/users/codechaser1" target="blank">  <img align="center" src="https://user-images.githubusercontent.com/63065397/123329670-b11a5d00-d55a-11eb-8096-44ca8667f0e3.png" alt="codechaser" height="24" width="" padding="" /></a>&nbsp;&nbsp;&nbsp; Highest Rating: 1950
 * <a href="https://codeforces.com/profile/codechaser" target="blank">codechaser  &nbsp;&nbsp;@codeforces</a> &nbsp; <a href="https://codeforces.com/profile/codechaser" target="blank"><img align="center" src="https://logo.clearbit.com/codeforces.com" alt="codechaser" height="24" width="" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Highest Rating: 1470
 
 ___
