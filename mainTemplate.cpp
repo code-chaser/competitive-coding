@@ -53,6 +53,7 @@ typedef vector<llint> vl;
 typedef vector<vl> vvl;
 typedef vector<bool> vb;
 typedef pair<llint,llint> pll;
+typedef vector<pll> vll;
 typedef pair<llint,string> pls;
 typedef map<llint,llint> mll;
 const uint uintMax=4294967295;          //+(1<<32) - 1
@@ -63,13 +64,13 @@ const llint Max=9223372036854775807;    //+(1<<63) - 1
 const llint Min=-9223372036854775808;   //-(1<<63)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 template<typename... T>
-void print(T... arg);
+void print(T&... arg);
 template<typename T1, typename T2>
-ostream& operator<<(ostream& cout, pair<T1,T2> p);
+ostream& operator<<(ostream& cout, pair<T1,T2>& p);
 template<typename T>
-ostream& operator<<(ostream& cout, vector<T> v);
+ostream& operator<<(ostream& cout, vector<T>& v);
 template<typename T1, typename T2>
-ostream& operator<<(ostream& cout, map<T1,T2> v);
+ostream& operator<<(ostream& cout, map<T1,T2>& m);
 template<typename... T>
 void input(T&... arg);
 template<typename T1, typename T2>
@@ -82,9 +83,10 @@ void ts(vector<llint>& v, llint od);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 inline void codechaser(){
     llint n,ans=0;
-    input(n);
-    
-    print(ans,"\n");
+    cin>>n;
+    vl v(n);
+    cin>>v;
+
     return;
 }
 int main(){
@@ -97,23 +99,22 @@ int main(){
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 template<typename... T>
-void print(T... arg){
+void print(T&... arg){
     ((cout<<arg), ...);
 }
 template<typename T1, typename T2>
-ostream& operator<<(ostream& cout, pair<T1,T2> p){
-    cout<<p.first<<" "<<p.second;
+ostream& operator<<(ostream& cout, pair<T1,T2>& p){
+    cout<<p.first<<" "<<p.second<<" ";
     return cout;
 }
 template<typename T>
-ostream& operator<<(ostream& cout, vector<T> v){
-    llint cnt=0;
-    for(auto& i:v) cout<<i<<((++cnt)!=v.size()?" ":"");
+ostream& operator<<(ostream& cout, vector<T>& v){
+    for(auto& i:v) cout<<i<<" ";
     return cout;
 }
 template<typename T1, typename T2>
-ostream& operator<<(ostream& cout, map<T1,T2> m){
-    for(auto i:m) cout<<i<<"\n";
+ostream& operator<<(ostream& cout, map<T1,T2>& m){
+    for(auto& i:m) cout<<i<<"\n";
     cout<<"\n";
     return cout;
 }
