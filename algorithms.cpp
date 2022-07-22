@@ -548,6 +548,15 @@ llint modInv(llint a, llint b){
 //CHECKED
 //======================================================
 
+// MODULAR MULTIPLICATIVE INVERSE
+vector<llint> modInv(llint p){
+    vector<llint> inv(p);
+    inv[1]=1;
+    for(int i=2;i<p;++i)
+        inv[i]=(p-(p/i)*inv[p%i]%p)%p;
+    return inv;
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main(){
     ios_base::sync_with_stdio(false);
